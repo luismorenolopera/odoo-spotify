@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <record id="spotify_settings" model="ir.ui.view">
+    <field name="name">Spotify</field>
+    <field name="model">spotify.config.settings</field>
+    <field name="arch" type="xml">
+      <form string="Spotify Settings" class="oe_form_configuration">
+        <header>
+          <button string="Save" type="object"
+              name="execute" class="oe_highlight"/>
+          or
+          <button string="Cancel" type="object"
+              name="cancel" class="oe_link"/>
+        </header>
+          <group string="Setting Spotify">
+            <div>
+              <div>
+                <label for="token"/>
+                <field name="token"/>
+              </div>
+              <div>
+                <label for="market"/>
+                <field name="market"/>
+              </div>
+            </div>
+          </group>
+      </form>
+    </field>
+  </record>
+
+  <record id="spotify_action" model="ir.actions.act_window">
+    <field name="name">Spotify</field>
+    <field name="res_model">spotify.config.settings</field>
+    <field name="view_id" ref="spotify_settings"/>
+    <field name="view_mode">form</field>
+    <field name="target">inline</field>
+  </record>
+  <menuitem
+    id="spotify_settings_menu"
+    name="Spotify"
+    parent="base.menu_config"
+    action="spotify_action"/>
+</odoo>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <record model="ir.ui.view" id="genre_tree_view">
+      <field name="name">genre.tree</field>
+      <field name="model">spotify.track</field>
+      <field name="arch" type="xml">
+          <tree string="Session Tree">
+              <field name="genre"/>
+              <field name="title"/>
+              <field name="artist"/>
+              <field name="track_url" widget="url"/>
+          </tree>
+      </field>
+  </record>
+</odoo>
